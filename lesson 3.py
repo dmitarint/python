@@ -1,3 +1,4 @@
+Дмитрий Сизов
 # EASY
 
 # Задание-1:
@@ -6,20 +7,20 @@
 # Округление должно происходить по математическим правилам (0.6 --> 1, 0.4 --> 0).
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
-# def skruglenie(a, b):
-#     b=int(b)
-#     razd = a.split('.')
-#     print ('razd ',razd)
-#     desyatie = str(razd[1])
-#     print('desyatie ', desyatie)
-#     if int(desyatie[b+1]) < 5:
-#         result=f'{razd[0]}.{desyatie[0:b]}'
-#     else:
-#         result=f'{razd[0]}.{int(desyatie[0:b])+1}'
-#     return result
-# number = input('введите число: ')
-# znaki = input('введите количество знаков после запятой: ')
-# print(skruglenie(number,znaki))
+def skruglenie(a, b):
+    b=int(b)
+    razd = a.split('.')
+    print ('razd ',razd)
+    desyatie = str(razd[1])
+    print('desyatie ', desyatie)
+    if int(desyatie[b+1]) < 5:
+        result=f'{razd[0]}.{desyatie[0:b]}'
+    else:
+        result=f'{razd[0]}.{int(desyatie[0:b])+1}'
+    return result
+number = input('введите число: ')
+znaki = input('введите количество знаков после запятой: ')
+print(skruglenie(number,znaki))
 
 # Задание-2:
 # Дан шестизначный номер билета. Определить, является ли билет счастливым.
@@ -27,24 +28,24 @@
 # Билет считается счастливым, если сумма его первых и последних цифр равны.
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 
-# def proverka(a):
-#     a=str(a)
-#     if int(a[0])+int(a[1])+int(a[2])==int(a[3])+int(a[4])+int(a[5]):
-#         result=True
-#     else:
-#         result=False
-#     return result
-#
-# proof=False
-# while proof==False:
-#     bilet=input('Введите шестизначный номер билета ')
-#     if len(bilet)==6 and bilet.isdigit():
-#         proof=True
-#
-# if proverka(bilet)==True:
-#     print ('Ваш билет выиграл!')
-# else:
-#     print ('Ваш билет проиграл. Может повезет в следующий раз')
+def proverka(a):
+    a=str(a)
+    if int(a[0])+int(a[1])+int(a[2])==int(a[3])+int(a[4])+int(a[5]):
+        result=True
+    else:
+        result=False
+    return result
+
+proof=False
+while proof==False:
+    bilet=input('Введите шестизначный номер билета ')
+    if len(bilet)==6 and bilet.isdigit():
+        proof=True
+
+if proverka(bilet)==True:
+    print ('Ваш билет выиграл!')
+else:
+    print ('Ваш билет проиграл. Может повезет в следующий раз')
 
 # NORMAL
 
@@ -52,38 +53,38 @@
 # Напишите функцию, возвращающую ряд Фибоначчи с n-элемента до m-элемента.
 # Первыми элементами ряда считать цифры 1 1
 
-# def fibonachi(n, m):
-#     a = [1, 1]
-#     for i in range(1, m + 1):
-#             a.append(a[i] + a[i - 1])
-#     print(a[n-1:m])
-#
-# n = int(input('введите номер первого числа Фибоначчи: '))
-# m = int(input('введите номер последнего числа Фибоначчи: '))
+def fibonachi(n, m):
+    a = [1, 1]
+    for i in range(1, m + 1):
+            a.append(a[i] + a[i - 1])
+    print(a[n-1:m])
 
-# fibonachi(n, m)
+n = int(input('введите номер первого числа Фибоначчи: '))
+m = int(input('введите номер последнего числа Фибоначчи: '))
+
+fibonachi(n, m)
 
 # Задача-2:
 # Напишите функцию, сортирующую принимаемый список по возрастанию.
 # Для сортировки используйте любой алгоритм (например пузырьковый).
 # Для решения данной задачи нельзя использовать встроенную функцию и метод sort()
 #
-# def sorting(a):
-#     for j in range(len(a)):
-#         for i in range(1, len(a) - j):
-#             if a[i - 1] > a[i]:
-#                 a[i - 1], a[i] = a[i], a[i - 1]
-#     print(a)
-#
-#
-# spisok = []
-# c = 0
-# while c == 0:
-#     a = input('Введите число. Для окончания цикла введите Enter ')
-#     if a == '': break
-#     spisok.append(int(a))
-#
-# sorting(spisok)
+def sorting(a):
+    for j in range(len(a)):
+        for i in range(1, len(a) - j):
+            if a[i - 1] > a[i]:
+                a[i - 1], a[i] = a[i], a[i - 1]
+    print(a)
+
+
+spisok = []
+c = 0
+while c == 0:
+    a = input('Введите число. Для окончания цикла введите Enter ')
+    if a == '': break
+    spisok.append(int(a))
+
+sorting(spisok)
 
 # HARD
 
